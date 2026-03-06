@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminairPrime | Open Source Projects</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --accent-color: #38bdf8;
+            --hover-border: #7dd3fc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--hover-border);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p.desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .card .meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--card-border);
+            padding-top: 1rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--card-border);
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LuminairPrime Projects</h1>
+        <p class="subtitle">An automated index of open-source repositories and documentation.</p>
+    </header>
+
+    <main class="grid">
+        
+        <a href="https://LuminairPrime.github.io/openwrt-docs4ai-v8/" class="card">
+            <h2>openwrt-docs4ai-v8</h2>
+            <p class="desc">No description provided.</p>
+            <div class="meta">
+                <span>JavaScript</span>
+                <span>Updated: Mar 06, 2026</span>
+            </div>
+        </a>
+
+        <a href="https://LuminairPrime.github.io/openwrt-developer-documentation-for-ai-llms/" class="card">
+            <h2>openwrt-developer-documentation-for-ai-llms</h2>
+            <p class="desc">OpenWrt developer documentation collected and optimized for AI ingestion. Auto-generated markdown format for LLMs, RAG, MCP, and direct context-window injection.</p>
+            <div class="meta">
+                <span>JavaScript</span>
+                <span>Updated: Mar 04, 2026</span>
+            </div>
+        </a>
+    </main>
+
+    <footer>
+        <p>Generated automatically via GitHub Actions • Data sourced directly from the GitHub API</p>
+    </footer>
+</body>
+</html>
